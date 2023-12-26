@@ -64,6 +64,9 @@ function createBookCard(book) {
     const cardSection = document.createElement('div');
     cardSection.classList.add('book-card');
 
+    // Determine initial border color based on initial read status
+    const initialBorderColor = book.read ? 'green' : 'red';
+
     cardSection.innerHTML = `
         <h3>${book.title}</h3>
         <p>Author: ${book.author}</p>
@@ -72,11 +75,17 @@ function createBookCard(book) {
         <button class="remove">Remove</button>
     `;
 
+    // Set the initial border color
+    cardSection.style.borderColor = initialBorderColor;
+
     const readToggleBtn = cardSection.querySelector('.read-toggle');
-    const removeButton = cardSection.querySelector('.remove');
 
+    readToggleBtn.addEventListener('click', function(){
+        // Toggle the read status
+        book.read = !book.read;
+        // Update the border color based on the new read status
+        cardSection.style.borderColor = book.read ? 'green' : 'red';
 
-    readToggleBtn.addEventListener('click', function() {
         if (readToggleBtn.textContent === "Read") {
             readToggleBtn.textContent = "Not Read";
         } else {
@@ -84,22 +93,15 @@ function createBookCard(book) {
         }
     });
 
+    const removeButton = cardSection.querySelector('.remove');
+
     removeButton.addEventListener('click', function() {
-        // Find the corresponding book in myLibrary based on the button's position in the DOM
-        const card = removeButton.closest('.book-card');
-        const index = Array.from(bookContainer.children).indexOf(card);
-        
-        card.remove();
-        // Ensure the index is valid
-        if (index !== -1 && index < myLibrary.length) {
-            // Remove the book from myLibrary
+        const index = myLibrary.indexOf(book);
+        if (index !== -1) {
             myLibrary.splice(index, 1);
-            
-            // Update the display to reflect the removal
             updateDisplay();
         }
     });
 
     return cardSection;
 }
-

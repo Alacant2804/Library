@@ -50,11 +50,51 @@ header {
     border-radius: 5px;
     padding: 20px;
     margin: 10px;
-    width: 250px; 
+    width: 250px;
     box-sizing: border-box;
-    word-wrap: break-word; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
+.book-card p {
+    font-size: 16px; /* Adjust the font size for paragraphs (author, pages, etc.) */
+}
+
+.book-card button {
+    margin-top: 10px;
+}
+
+.book-card .read-toggle {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px; /* Adjust the font size */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.book-card .read-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Customize the Remove button */
+.book-card .remove {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px; /* Adjust the font size */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.book-card .remove:hover {
+    background-color: #c0392b;
+}
 
 .modal {
     display: none;
@@ -87,6 +127,7 @@ header {
 form {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .title,
@@ -107,6 +148,7 @@ form {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
+    margin: 10px;
 }
 
 .add:hover,
