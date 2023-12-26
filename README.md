@@ -18,17 +18,22 @@ Welcome to My Awesome Library! This is a simple web application that allows you 
 Open index.html in your web browser to launch the application.
 
 📝 Usage
+
 Click on the "New Book" button to add a new book to your library.
 Fill in the book details, and click "Add" to save the book.
 Click on the "Read" button to toggle the read status of a book.
 Click on the "Remove" button to delete a book from your library.
 
 🔧 Technologies Used
+
 HTML
+
 CSS
+
 JavaScript
 
 🤝 Contributing
+
 If you'd like to contribute to this project, please follow these steps:
 
 Fork the repository.
