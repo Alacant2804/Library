@@ -76,11 +76,11 @@ function createBookCard(book) {
     const removeButton = cardSection.querySelector('.remove');
 
 
-    readToggleBtn.addEventListener('click', function(){
+    readToggleBtn.addEventListener('click', function() {
         if (readToggleBtn.textContent === "Read") {
             readToggleBtn.textContent = "Not Read";
         } else {
-            readToggleBtn.textContent = "Read";                 
+            readToggleBtn.textContent = "Read";
         }
     });
 
