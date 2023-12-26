@@ -26,11 +26,9 @@ Click on the "Remove" button to delete a book from your library.
 
 🔧 Technologies Used
 
-HTML
-
-CSS
-
-JavaScript
+* HTML: &#60;html&#62;
+* CSS: &#60;style&#62;
+* JavaScript: &#60;script&#62;
 
 🤝 Contributing
 
