@@ -160,3 +160,8 @@ input:invalid:focus {
     border: 1px solid lightcoral;
     outline: none;
 }
+
+input:invalid:focus {
+    border: 1px solid lightcoral;
+    outline: none;
+}
