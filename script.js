@@ -6,11 +6,6 @@ const addButton = document.querySelector('.add');
 const cancelButton = document.querySelector('.cancel');
 const bookContainer = document.querySelector('.book-container');
 
-const titleInput = document.querySelector('.title');
-const authorInput = document.querySelector('.author');
-const pagesInput = document.querySelector('.pages');
-
-
 const myLibrary = [];
 
 function Book(title, author, pages) {
@@ -29,37 +24,16 @@ closeButton.addEventListener('click', function() {
     modal.style.display = 'none';
 });
 
-addButton.addEventListener('click', function(event) {
-    let titleValue = titleInput.value;
-    let authorValue = authorInput.value;
-    let pagesValue = pagesInput.value;
+addButton.addEventListener('click', function() {
+    let titleValue = document.querySelector('.title').value;
+    let authorValue = document.querySelector('.author').value;
+    let pagesValue = document.querySelector('.pages').value;
 
-    // Clear custom validity messages
-    titleInput.setCustomValidity('');
-    authorInput.setCustomValidity('');
-    pagesInput.setCustomValidity('');
-
-    // Validate title
-    if (!titleInput.checkValidity()) {
-        titleInput.setCustomValidity('Please enter a valid title.');
+    if (titleValue.trim() === '' || isNaN(pagesValue)) {
+        alert('Please enter valid data.');
+        return; // Do not proceed with adding the book if validation fails
     }
 
-    // Validate author
-    if (!authorInput.checkValidity()) {
-        authorInput.setCustomValidity('Please enter a valid author.');
-    }
-
-    // Validate pages
-    if (!pagesInput.checkValidity()) {
-        pagesInput.setCustomValidity('Please enter a valid number of pages.');
-    }
-
-    // Check overall form validity
-    if (!titleInput.checkValidity() || !authorInput.checkValidity() || !pagesInput.checkValidity()) {
-        return;
-    }
-
-    // Continue with adding the book if all validation passes
     let newBook = new Book(titleValue, authorValue, pagesValue);
 
     myLibrary.push(newBook);
