@@ -155,3 +155,8 @@ form {
 .cancel:hover {
     background-color: #2980b9;
 }
+
+input:invalid:focus {
+    border: 1px solid lightcoral;
+    outline: none;
+}
